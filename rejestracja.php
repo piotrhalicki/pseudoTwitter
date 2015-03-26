@@ -77,12 +77,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 		];
 		$hashed_password = password_hash($_POST['pass'], PASSWORD_BCRYPT, $options);
-		$conn->query ("INSERT INTO User(name, password) values ('{$_POST['login']}', '$hashed_password')");
-	}
+		var_dump($_POST);
+		$conn->query ("INSERT INTO User(name, password, email) VALUES('{$_POST['login']}', '$hashed_password', '{$_POST['mail']}')");
+	};
 };
 
-$conn->close(); // zamykanie tabeli ZAWSZE na końcu - to logiczne!
-$conn = null; 	// zamykanie tabeli ZAWSZE na końcu - to logiczne!
+//$conn->close(); // zamykanie tabeli ZAWSZE na końcu - to logiczne!
+//$conn = null; 	// zamykanie tabeli ZAWSZE na końcu - to logiczne!
 
 ?>
 
