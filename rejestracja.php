@@ -1,32 +1,14 @@
-<!DOCTYPE html>
-
-<html lang="pl-PL">
-<meta charset="UTF-8">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="Pseudo Twitter" content="ćwiczenia">	
-	<title>						
-	Pseudo Twitter
-	</title>
-</head>
-
-
 <?php
 require 'header.php';
 ?>
 
-<br>
 <hr>
 <br>
 
-<?php
-require 'connect.php';
-?>
 
 <form action="#" method="POST">
 <fieldset>
-		<legend><strong>Zarejestruj się</strong></legend> 
+		<legend> < <strong>Zarejestruj się</strong> > </legend> 
 <p> 						
 	<label> 				
 		Podaj login:
@@ -45,27 +27,24 @@ require 'connect.php';
 	<label> 				
 		Wprowadź hasłord:
 	<br>
-		<input type="password" name="pass" placeholder="Wprowadź hasło">
+		<input type="password" name="pass" placeholder="Wprowadź hasłord">
 	</label>
 </p>
 <p> 						
 	<label> 				
 		Powtórz hasłord:
 		<br>
-		<input type="password" name="pass2" placeholder="Powtórz hasło">
+		<input type="password" name="pass2" placeholder="Powtórz hasłord">
 	</label>
 </p>
 	<p>
-	<button type="submit">Zarejestruj</button>
+	<button type="submit">Zarejestruj się</button>
 	</p>
-	</form>
 	</fieldset>
-<br>
-<hr>
-<br>
-
+	</form>
 
 <?php
+// session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if($_POST['pass'] !== $_POST['pass2']) {
@@ -79,6 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$hashed_password = password_hash($_POST['pass'], PASSWORD_BCRYPT, $options);
 		var_dump($_POST);
 		$conn->query ("INSERT INTO User(name, password, email) VALUES('{$_POST['login']}', '$hashed_password', '{$_POST['mail']}')");
+		$_SESSION['user_name'] = $_POST['login'];
+		$_SESSION['user_mail'] = $_POST['mail'];
+		header("Location: /Warsztaty/zarejestrowany.php");
 	};
 };
 

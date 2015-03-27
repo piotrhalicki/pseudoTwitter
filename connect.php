@@ -27,8 +27,7 @@
 		die("Połączenie nieudane. Błąd: " . $conn->connect_error);
 	}
 	else {
-		echo "Połączenie z bazą ", '<strong>', $baseName, '</strong>', " udane :)";
-		echo '<br>', '<br>';
+		echo "Połączenie z bazą ", '<strong>', $baseName, '</strong>', " udane :)", '<br>';
 	};
 
 ?>

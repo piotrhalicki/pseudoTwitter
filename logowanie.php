@@ -2,31 +2,10 @@
 require 'header.php';
 ?>
 
-<br>
 <hr>
 <br>
 
-
 <?php
-session_start();
-include("connect.php");
-/*
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $sql = "SELECT email FROM User WHERE email = '{$_POST['mail']}'";
-    $result = $conn->query($sql);
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc());
-        $hashed_pass = $row['password'];
-        if(password_verify($_POST['pass'], $hashed_pass)){
-           $_POST['pass'] = $row['password'];
-           echo "zalogowany";
-           die();
-        };
-    };
-    echo "Zły login lub złe hasło <br>";
-};
-*/
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$sql = "SELECT * FROM User WHERE email = '{$_POST['mail']}'";
@@ -38,29 +17,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		if(password_verify($_POST['pass'], $hashed_pass)){
 			$_SESSION['user_id'] = $row['id'];
 			$_SESSION['user_name'] = $row['name'];
+			$_SESSION['user_mail'] = $_POST['mail'];
 			var_dump($_SESSION);
 		header("Location: /Warsztaty/zalogowany.php");
 			die();
 		}
 	}
-	echo("Zły login lub hasło <br>");
+	echo '<p>', '<strong>', "Zły login lub hasło", '</strong>', '</p>';
 }
 
 ?>
 
 <form method="POST" action="#">
-    <label>Mail użytkownika:</label><br>
- 	   <input name="mail" type="text" value=""/><br>
-    <label>Hasło:</label><br>
-    	<input name="pass" type="password" value=""/><br>
-    <button type="submit">Zaloguj</button>
+	<fieldset>
+	<legend>< <strong>Zaloguj się:</strong> ></legend>
+	<p><label>Mail użytkownika:</label><br>
+ 	<input name="mail" type="text" placeholder="Wprowadź maila" value=""/></p>
+    <p><label>Hasłord:</label><br>
+    <input name="pass" type="password" placeholder="Wprowadź hasłord" value=""/></p>
+    <p>
+    <button type="submit">Zaloguj się</button>
+	</p>
+	</fieldset>
 </form>
-
-
 
 <br>
 <hr>
-<br>
 
 <?php
 require 'footer.php';
