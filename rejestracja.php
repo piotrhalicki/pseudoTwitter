@@ -1,8 +1,8 @@
 <?php
-require 'header.php';
+	require 'header.php';
 ?>
 
-<hr>
+	<hr>
 <br>
 
 
@@ -58,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		$hashed_password = password_hash($_POST['pass'], PASSWORD_BCRYPT, $options);
 		var_dump($_POST);
 		$conn->query ("INSERT INTO User(name, password, email) VALUES('{$_POST['login']}', '$hashed_password', '{$_POST['mail']}')");
-		$_SESSION['user_name'] = $_POST['login'];
-		$_SESSION['user_mail'] = $_POST['mail'];
+		// $_SESSION['user_name'] = $_POST['login'];
+		// $_SESSION['user_mail'] = $_POST['mail'];
 		header("Location: /Warsztaty/zarejestrowany.php");
 	};
 };
@@ -70,9 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <br>
-<hr>
+	<hr>
 <br>
 
 <?php
-require 'footer.php';
+	require 'footer.php';
 ?>

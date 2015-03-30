@@ -1,12 +1,6 @@
-<?php
-	require 'header.php';
-?>
-
-	<hr>
-<br>
+<h1 style="text-align: center"><strong>Witaj na <strong><em>k!tterze</em></em></strong></strong></h1>
 
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$sql = "SELECT * FROM User WHERE email = '{$_POST['mail']}'";
 	$result = $conn->query($sql);
@@ -23,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			die();
 		}
 	}
-	echo '<p>', '<strong>', "Zły login lub hasło", '</strong>', '</p>';
+	echo '<div style="color: red">', '<strong>', "Zły login lub hasło", '</strong>', '</div>', '<br>';
 }
-
 ?>
 
+<div style="text-align: center">
 <form method="POST" action="#">
 	<fieldset>
 	<legend>< <strong>Zaloguj się:</strong> ></legend>
@@ -40,10 +34,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</p>
 	</fieldset>
 </form>
-
-<br>
-	<hr>
-
-<?php
-require 'footer.php';
-?>
+</div>

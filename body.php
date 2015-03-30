@@ -1,3 +1,1 @@
-<h1>
-<strong>Witaj na <strong><em>Kitte®ze</em></em></strong></strong>
-</h1>
+<h1 style="text-align: center"><strong>Witaj na <strong><em>k!tterze</em></em></strong></strong></h1>

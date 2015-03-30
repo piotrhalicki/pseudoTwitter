@@ -1,20 +1,23 @@
 <?php
-require 'header.php';
+	require 'header.php';
 ?>
 
-<hr>
+	<hr>
 <br>
 
-<?php
-// session_start();
 
-echo '<h1>', "Witaj ", $_SESSION['user_name'], "! :)", '</h1>';
-echo '<h2>', "Zalogowałeś się na stronie Twitter :)", '</h2>';
+
+<?php
+	$zalogowany = $_SESSION['user_name'];
+	setcookie('k!tter', $zalogowany, time()+300);
+
+	echo '<h1>', "Witaj ", $_SESSION['user_name'], "! :)", '</h1>';
+	echo '<h2>', "Zalogowałeś się na stronie k!tter :)", '</h2>';
 ?>
 
 <br>
-<hr>
+	<hr>
 
 <?php
-require 'footer.php';
+	require 'footer.php';
 ?>

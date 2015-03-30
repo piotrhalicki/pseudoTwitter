@@ -20,17 +20,19 @@ else {
 	Kitter
 	</title>
 </head>
-<body>
-<p>
-<?php
-include("connect.php");
-?>
-<a href="rejestracja.php">Zarejestruj się</a><br>
-<a href="logowanie.php">Zaloguj się</a><br>
-<a href="profil.php">Twój profil</a><br>
-<a href="wyloguj.php">Wyloguj</a>
-</p>
 
+<body>
+<?php
+include("connect.php"); 
+?>
+<p>
+<dl>
+	<dd><a href="rejestracja.php">Zarejestruj się</a><dd>
+	<dd><a href="logowanie.php">Zaloguj się</a><dd>
+	<dd><a href="profil.php">Twój profil</a></dd>
+	<dd><a href="wyloguj.php">Wyloguj</a></dd>
+</dl>
+</p>
 </body>
 
 <html>

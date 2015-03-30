@@ -1,24 +1,30 @@
 <?php
-require 'header.php';
+	require 'header.php';
 ?>
 
-<hr>
+	<hr>
 <br>
 
 <?php
-session_destroy();
-
-if (isset($_SESSION['user_name'])) {
-	echo '<strong>' .$_SESSION['user_name'], '</strong>';
-} else {
-	echo '<strong>', "Zostałeś wylogowany", '</strong>';
-}
+	if (isset($_COOKIE["k!tter"])) {
+		setcookie('k!tter', time()-1800);
+		echo '<strong>', "Zostałeś wylogowany", '</strong>';
+	} else {
+		isset($_SESSION['user_name']);
+		session_destroy();
+		echo '<strong>', "Zostałeś wylogowany", '</strong>';
+	};	
+	
+	//	echo '<strong>' .$_SESSION['user_name'], '</strong>';
+	//} else {
+	//	echo '<strong>', "Zostałeś wylogowany", '</strong>';
+	//}
 ?>
 
 <br>
 <br>
-<hr>
+	<hr>
 
 <?php
-require 'footer.php';
+	require 'footer.php';
 ?>

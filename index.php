@@ -13,7 +13,13 @@ require 'header.php';
 <br>
 
 <?php
-require 'body.php';
+
+if (isset($_COOKIE["k!tter"]) || isset($_SESSION['user_name'])) {
+	require 'body.php';
+} else {
+	require 'main.php';
+};
+
 ?>
 
 <br>
