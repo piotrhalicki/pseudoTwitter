@@ -55,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			'cost' => 11,
 			'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 		];
-		$hashed_password = password_hash($_POST['pass'], PASSWORD_BCRYPT, $options);
-		var_dump($_POST);
+		$hashed_password = password_hash($_POST['pass'], PASSWORD_BCRYPT, $options); // zapytać o $options
+		// var_dump($_POST);
 		$conn->query ("INSERT INTO User(name, password, email) VALUES('{$_POST['login']}', '$hashed_password', '{$_POST['mail']}')");
 		// $_SESSION['user_name'] = $_POST['login'];
 		// $_SESSION['user_mail'] = $_POST['mail'];

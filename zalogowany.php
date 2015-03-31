@@ -1,8 +1,8 @@
 <?php
 require 'header.php';
-var_dump($_SESSION);
-	$zalogowany = $_SESSION['user_name'];
-	setcookie('k!tter', $zalogowany, time()+300);
+// var_dump($_SESSION);
+	// $zalogowany = $_SESSION['user_name'];
+	// setcookie('k!tter', $zalogowany, time()+300);
 ?>
 
 	<hr>
