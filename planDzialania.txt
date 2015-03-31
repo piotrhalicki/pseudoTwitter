@@ -1,0 +1,45 @@
+-------------------------------------------------
+1. ZALOGOWANY / NIEZALOGOWANY___________
+	-header zależny od (nie)zalogowania	[ ]
+-------------------------------------------------
+2. DODAWANIE POSTÓW_____________________
+	-stworzenie tablicy Posts	 		[X]
+	-textarea podpiąć pod posty			[ ]
+	-usuwanie postów					[ ]
+-------------------------------------------------
+3. KOMENTOWANIE POSTÓW__________________
+	-stworzenie tablicy Coments			[ ]
+-------------------------------------------------			
+4. MODYFIKOWANIE PROFILU________________
+	-modyfikacja tablicy User			[ ]
+-------------------------------------------------
+5. DODAWANIE ZNAJOMYCH__________________
+	-stworzenie tablicy Friends			[ ]
+-------------------------------------------------
+6. WIADOMOŚCI___________________________
+	-wysyłanie							[ ]
+	-odbieranie							[ ]
+-------------------------------------------------
+7. PORZĄDEK_____________________________
+	-ujednolicenie nazw plików			[ ]
+	-"ang-logiczne" "ofolderowanie"		[ ]
+-------------------------------------------------
+8. TUNNING PORTALU______________________
+	-routing							[ ]
+	-prepare statements					[ ]
+	-ajax (posty na mainie)				[ ]
+	-pozamykać połączenia z bazą		[ ]
+	-trimm'y							[ ]
+-------------------------------------------------
+9. KOSMETYKA____________________________
+	-logo :)							[ ]
+	-czcionka							[ ]
+	-ujednolicenie						[ ]
+	-CSS								[ ]
+	-Bootstrap							[ ]
+	-sticky footer						[ ]
+	-main								[ ]
+-------------------------------------------------
+10. BONUS_______________________________
+	-jak się wyrobię, dodać "to do"		[ ]
+-------------------------------------------------

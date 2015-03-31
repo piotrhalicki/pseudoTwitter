@@ -3,19 +3,20 @@ require 'header.php';
 ?>
 
 <hr>
+<br>
 
 <?php
-//if (isset($_COOKIE["k!tter"])) {
-var_dump($_COOKIE['k!tter']);
 
 if (isset($_COOKIE["k!tter"])) {
-	echo '<h1>', ucfirst($_COOKIE['k!tter']), ", witaj na k!tterze! :)", '</h1>';
+	echo '<h1 style="text-align: center">', ucfirst($_COOKIE['k!tter']), ", witaj na k!tterze! :)", '</h1>';
 }
 else {
-	echo '<h1>', ucfirst($_SESSION['user_name']), ", witaj na k!tterze! :)", '</h1>';
+	echo '<h1 style="text-align: center">', ucfirst($_SESSION['user_name']), ", witaj na k!tterze! :)", '</h1>';
 }
 ?>
 
+<br>
+<div style="text-align: center">
 <p>
 	<fieldset>
 	<legend> < <strong>Dane Twojego profilu:</strong> > </legend>
@@ -25,8 +26,9 @@ else {
 </p>
 	</fieldset>
 </p>
+</div>
 
-
+<div style="text-align: center">
 <p>
 	<fieldset>
 	<legend> < <strong>Kittuj: (dodaj post)</strong> > </legend>
@@ -40,8 +42,9 @@ else {
 </p>
 	</fieldset>	
 </p>
+</div>
 
-
+<div style="text-align: center">
 <p>
 	<fieldset>
 	<legend> < <strong>Wiadomości</strong> > </legend>
@@ -51,8 +54,9 @@ else {
 </p>
 	</fieldset>
 </p>
+</div>
 
-
+<div style="text-align: center">
 <p>
 	<fieldset>
 	<legend> < <strong>Znajomi k!tterzy</strong> > </legend>
@@ -61,6 +65,18 @@ else {
 </p>
 	</fieldset>
 </p>
+</div>
+
+<div style="text-align: center">
+<p>
+	<fieldset>
+	<legend> < <strong>Odwal k!tte</strong> > </legend>
+<p>
+	tu bedzie przycisk usuwający profil ;)
+</p>
+	</fieldset>
+</p>
+</div>
 
 <hr>
 

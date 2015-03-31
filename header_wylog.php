@@ -27,6 +27,17 @@ else {
 <?php
 include("connect.php"); 
 
+if (isset($_SESSION['user_name'])) {
+	echo ("
+		<p>
+		<dl>
+		<dd><a href='rejestracja.php'>Zarejestruj się</a><dd>
+		<dd><a href='logowanie.php'>Zaloguj się</a><dd>
+		</p>
+		</dl>
+		");
+};
+
 if (!isset($_SESSION['user_name'])) {
 	echo ("
 		<p>
@@ -36,16 +47,7 @@ if (!isset($_SESSION['user_name'])) {
 		</p>
 		</dl>
 		");
-} else {
-		echo ("
-		<p>
-		<dl>		
-		<dd><a href='profil.php'>Twój profil</a></dd>
-		<dd><a href='wyloguj.php'>Wyloguj</a></dd>
-		</dl>
-		</p>	
-		");
-	};
+};	// wiem że to niezgrabne ale.. skuteczne ;)
 	?>
 	
 

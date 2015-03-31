@@ -1,4 +1,4 @@
-<h1 style="text-align: center"><strong>Witaj na <strong><em>k!tterze</em></em></strong></strong></h1>
+<h1 style="text-align: center">< <strong>Witaj na <strong><em>k!tterze</em></strong> ></strong></h1>
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

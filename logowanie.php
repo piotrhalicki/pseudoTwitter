@@ -28,6 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
+<div style="text-align: center">
 <form method="POST" action="#">
 	<fieldset>
 	<legend>< <strong>Zaloguj się:</strong> ></legend>
@@ -40,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</p>
 	</fieldset>
 </form>
+</div>
+
 
 <br>
 	<hr>
