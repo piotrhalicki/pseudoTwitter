@@ -11,8 +11,5 @@
 	if ($conn->connect_error) {
 		die("Połączenie nieudane. Błąd: " . $conn->connect_error);
 	};
-//	else {
-//		echo "Połączenie z bazą ", '<strong>', $baseName, '</strong>', " udane :)", '<br>';
-//	};
 
 ?>

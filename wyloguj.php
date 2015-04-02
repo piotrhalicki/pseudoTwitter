@@ -1,7 +1,9 @@
 <?php
+
 if (isset($_SESSION)) {
 require 'header_wylog.php';
 }; 
+
 if (!isset($_SESSION)) {
 require 'header_wylog.php';
 };	// wiem że to niezgrabne ale.. skuteczne ;)
@@ -12,6 +14,7 @@ require 'header_wylog.php';
 <br>
 
 <?php
+
 if (isset($_SESSION)) {
 session_destroy();
 //echo '<strong>' .$_SESSION['user_name'], '</strong>';

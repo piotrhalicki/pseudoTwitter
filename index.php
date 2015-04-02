@@ -1,12 +1,12 @@
 <?php
-require 'header.php';
+	require 'header.php';
 ?>
 
 <hr>
 <br>
 
 <?php
-require 'vendor/autoload.php';
+	require 'vendor/autoload.php';
 
 $router = new AltoRouter();
 $router->setBasePath('/Warsztaty');
@@ -57,5 +57,5 @@ if (!isset($_SESSION['user_name']) || !isset($_COOKIE['k!tter'])) {
 <hr>
 
 <?php
-require 'footer.php';
+	require 'footer.php';
 ?>

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 if(!isset($_SESSION['licznik'])) {
 	$_SESSION['licznik'] = 1;
@@ -16,15 +17,16 @@ else {
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="Kitter" content="ćwiczenia">	
+	<meta name="K!tter" content="ćwiczenia">	
 	<title>						
-	Kitter
+	< k!tter >
 	</title>
 </head>
 
 <body>
 
 <?php
+
 include("connect.php"); 
 
 if (isset($_SESSION['user_name'])) {
@@ -48,8 +50,8 @@ if (!isset($_SESSION['user_name'])) {
 		</dl>
 		");
 };	// wiem że to niezgrabne ale.. skuteczne ;)
-	?>
-	
+
+?>
 
 </body>
 

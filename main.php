@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$_SESSION['user_name'] = $row['name'];
 			$_SESSION['user_mail'] = $_POST['mail'];
 			var_dump($_SESSION);
-		header("Location: /Warsztaty/zalogowany.php");
+			header("Location: /Warsztaty/zalogowany.php");
 			die();
 		}
 	}
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div style="text-align: center">
 <form method="POST" action="#">
 	<fieldset>
-	<legend>< <strong>Zaloguj się:</strong> ></legend>
+	<legend><h3>< Zaloguj się: ></h3></legend>
 	<p><label>Mail użytkownika:</label><br>
  	<input name="mail" type="text" placeholder="Wprowadź maila" value=""/></p>
     <p><label>Hasłord:</label><br>

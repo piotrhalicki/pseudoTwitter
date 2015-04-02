@@ -1,19 +1,22 @@
 <?php
-require 'header.php';
+	require 'header.php';
 ?>
 
 <br>
-<hr>
+	<hr>
 
-<?php
-//session_start();
+<h1 style="text-align: center">
+< <strong>Witaj <?php echo ucfirst($_SESSION['user_name']) ?>! ></strong>
+</h1>
 
-echo "Witaj ", $_SESSION['user_name'];
-?>
+<h2 style="text-align: center">
+< <strong>Zarejestrowałeś się na <strong><em>k!tterze</em></strong> :) ></strong>
+</h2>
 
 <br>
-<hr>
+<br>
+	<hr>
 
 <?php
-require 'footer.php';
+	require 'footer.php';
 ?>

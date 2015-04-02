@@ -1,10 +1,10 @@
 -------------------------------------------------
 1. ZALOGOWANY / NIEZALOGOWANY___________
-	-header zależny od (nie)zalogowania	[ ]
+	-header zależny od (nie)zalogowania	[X]
 -------------------------------------------------
 2. DODAWANIE POSTÓW_____________________
 	-stworzenie tablicy Posts	 		[X]
-	-textarea podpiąć pod posty			[ ]
+	-textarea podpiąć pod posty			[X]
 	-usuwanie postów					[ ]
 -------------------------------------------------
 3. KOMENTOWANIE POSTÓW__________________
