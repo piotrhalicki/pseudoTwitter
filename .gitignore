@@ -1,0 +1,8 @@
+.buildpath
+.project
+.settings/
+composer.json
+composer.lock
+composer.phar
+newTable.php
+newfile.php
