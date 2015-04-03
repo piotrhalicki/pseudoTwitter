@@ -1,9 +1,6 @@
 <?php
-	require 'header.php';
+//	require 'header.php';
 ?>
-
-<hr>
-<br>
 
 <?php
 
@@ -12,7 +9,7 @@ if (isset($_COOKIE["k!tter"])) {
 }
 else {
 	echo '<h1 style="text-align: center">', ucfirst($_SESSION['user_name']), ", witaj na k!tterze! :)", '</h1>';
-}
+};
 
 ?>
 
@@ -133,27 +130,19 @@ else {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if(isset($_POST['deleteUser'])) {
-	$conn->query ("DELETE FROM User WHERE id=".$_SESSION['user_id']); // poprawić składnię - $_SESSION powinno byc w {} ?
-	echo "profil skasowany";
+		$conn->query ("DELETE FROM User WHERE id=".$_SESSION['user_id']); // poprawić składnię - $_SESSION powinno byc w {} ?
+		echo "profil skasowany";
 	}
-}
 
-//zapytać czy wyżej może być else... albo sprawdzić ;)
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if (isset($_POST['przy_k!ttuj'])) {
 		$data = date('Y-m-d H:i:s');
-		$conn->query ("insert into Posts (user_id, tresc, data) values ('{$_SESSION['user_id']}', '{$_POST['post']}', '{$_POST['postData']}')");
+		$conn->query ("insert into Posts (user_id, tresc, data) values ('{$_SESSION['user_id']}', '{$_POST['post']}', '$data')");
 		echo 'kit dodany';
-	} else {
-		echo 'cos nie tak';
 	}
 };
 
 ?>
 
-<hr>
-
 <?php
-	require 'footer.php';
+//	require 'footer.php';
 ?>

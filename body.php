@@ -1,3 +1,11 @@
+<?php
+if (!isset($_SESSION['user_name'])) {
+	echo ("nie jesteś zalogowany!");
+	echo ("<br><br><hr>");
+	require 'footer.php';
+	die ();
+}
+?>
 <h1 style="text-align: center">
 < <strong><?php echo ucfirst($_SESSION['user_name']) ?>, witaj na <strong><em>k!tterze</em></strong> ></strong>
 </h1>

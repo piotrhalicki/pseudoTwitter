@@ -1,9 +1,6 @@
 <?php
-	require 'header.php';
+//	require 'header.php';
 ?>
-
-	<hr>
-<br>
 
 <?php
 
@@ -19,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			$_SESSION['user_name'] = $row['name'];
 			$_SESSION['user_mail'] = $_POST['mail'];
 			// var_dump($_SESSION);
-			header("Location: /Warsztaty/zalogowany.php");
+			header("Location: /Warsztaty/zalogowany");
 			die();
 		}
 	}
@@ -43,10 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </form>
 </div>
 
-
-<br>
-	<hr>
-
 <?php
-	require 'footer.php';
+//	require 'footer.php';
 ?>

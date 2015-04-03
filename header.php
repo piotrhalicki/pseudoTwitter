@@ -33,8 +33,8 @@ if (!isset($_SESSION['user_name'])) {
 	echo ("
 		<p>
 		<dl>
-		<dd><a href='rejestracja.php'>Zarejestruj się</a><dd>
-		<dd><a href='logowanie.php'>Zaloguj się</a><dd>
+		<dd><a href='/Warsztaty/rejestracja'>Zarejestruj się</a><dd>
+		<dd><a href='/Warsztaty/logowanie'>Zaloguj się</a><dd>
 		</p>
 		</dl>
 		");
@@ -42,12 +42,16 @@ if (!isset($_SESSION['user_name'])) {
 		echo ("
 		<p>
 		<dl>		
-		<dd><a href='profil.php'>Twój profil</a></dd>
-		<dd><a href='wyloguj.php'>Wyloguj</a></dd>
+		<dd><a href='/Warsztaty/profil'>Twój profil</a></dd>
+		<dd><a href='/Warsztaty/wyloguj'>Wyloguj</a></dd>
+		<dd><a href='/Warsztaty/uzytkownicy'>Pokaż innych użytkowników</a><dd>
 		</dl>
 		</p>	
 		");
 	};
+	
+	
+	
 	
 ?>
 

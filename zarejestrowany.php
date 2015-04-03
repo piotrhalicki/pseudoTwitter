@@ -1,9 +1,6 @@
 <?php
-	require 'header.php';
+//	require 'header.php';
 ?>
-
-<br>
-	<hr>
 
 <h1 style="text-align: center">
 < <strong>Witaj <?php echo ucfirst($_SESSION['user_name']) ?>! ></strong>
@@ -13,10 +10,10 @@
 < <strong>Zarejestrowałeś się na <strong><em>k!tterze</em></strong> :) ></strong>
 </h2>
 
-<br>
-<br>
-	<hr>
+<?php
+header("Refresh: 10; url=/Warsztaty/body");
+?>
 
 <?php
-	require 'footer.php';
+//	require 'footer.php';
 ?>

@@ -1,45 +1,62 @@
 <?php
-	require 'header.php';
+	include('header.php');
 ?>
 
 <hr>
 <br>
 
 <?php
+
 	require 'vendor/autoload.php';
 
 $router = new AltoRouter();
 $router->setBasePath('/Warsztaty');
 
-/*
-$router->map('GET', '/', 'main.php');
-$router->map('GET|POST', '/connect', 'connect.php');
-$router->map('GET|POST', '/footer', 'footer.php');
-$router->map('GET|POST', '/header', 'header.php');
-$router->map('GET|POST', '/logowanie', 'logowanie.php');
+$router->map('GET|POST', '/', 'main.php');
 $router->map('GET|POST', '/body', 'body.php');
+$router->map('GET|POST', '/connect', 'connect.php');
+$router->map('GET|POST', '/logowanie', 'logowanie.php');
 $router->map('GET|POST', '/profil', 'profil.php');
 $router->map('GET|POST', '/rejestracja', 'rejestracja.php');
 $router->map('GET|POST', '/wyloguj', 'wyloguj.php');
+$router->map('GET|POST', '/uzytkownicy', 'allUsers.php');
 $router->map('GET|POST', '/zalogowany', 'zalogowany.php');
 $router->map('GET|POST', '/zarejestrowany', 'zarejestrowany.php');
 
 $match = $router->match();
 
-var_dump($match);
+// var_dump($match);
+
+
 
 if ($match) {
 	require $match['target'];
-} else {
+}; 
+
+
+if (!isset($_SESSION['user_name']) && !(($match['target'] == "main.php" || $match['target'] == "logowanie.php" || $match['target'] == "rejestracja.php"))) {
+	header("Location: /Warsztaty/");
+	if (isset($_SESSION['user_name']) && ($match['target'] == "body.php")) {
+		header("Location: /Warsztaty/body");
+	};
+};
+
+// elseif (isset($_SESSION['user_name']) && !($match['target'] == "body.php")) {
+//	header("Location: /Warsztaty/body");
+//}
+
+/*
+else {
 	echo "Jeżeli widzisz ten napis tzn. że routing nie działa :(";
 }
 */
 
-if (isset($_SESSION['user_name'])) {
-	require 'body.php';
-} else {
-	require 'main.php';
-};
+
+
+
+//else {
+//	header("Location: /Warsztaty/main");
+//};
 
 /*
 if (!isset($_SESSION['user_name']) || !isset($_COOKIE['k!tter'])) {
@@ -57,5 +74,5 @@ if (!isset($_SESSION['user_name']) || !isset($_COOKIE['k!tter'])) {
 <hr>
 
 <?php
-	require 'footer.php';
+	require('footer.php');
 ?>

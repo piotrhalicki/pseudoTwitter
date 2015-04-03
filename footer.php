@@ -1,5 +1,11 @@
 <dl>
-	<dd><strong><a href="index.php">Wróć na stronę główną</a></strong></dd>
+<?php
+if (isset($_SESSION['user_name'])) {
+	echo ("<dd><strong><a href='/Warsztaty/body'>Wróć na stronę główną</a></strong></dd>");
+} else {
+	echo ("<dd><strong><a href='/Warsztaty/'>Wróć na stronę główną</a></strong></dd>");
+}
+?>
 	<dd>
 	<?php
 		if (!$conn->connect_error) {
