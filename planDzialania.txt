@@ -8,13 +8,13 @@
 	-usuwanie postów					[ ]
 -------------------------------------------------
 3. KOMENTOWANIE POSTÓW__________________
-	-stworzenie tablicy Coments			[ ]
+	-stworzenie tablicy Coments			[X]
 -------------------------------------------------			
 4. MODYFIKOWANIE PROFILU________________
 	-modyfikacja tablicy User			[ ]
 -------------------------------------------------
 5. DODAWANIE ZNAJOMYCH__________________
-	-stworzenie tablicy Friends			[ ]
+	-stworzenie tablicy Friends			[X]
 -------------------------------------------------
 6. WIADOMOŚCI___________________________
 	-wysyłanie							[ ]
@@ -25,7 +25,7 @@
 	-"ang-logiczne" "ofolderowanie"		[ ]
 -------------------------------------------------
 8. TUNNING PORTALU______________________
-	-routing							[ ]
+	-routing							[X]
 	-prepare statements					[ ]
 	-ajax (posty na mainie)				[ ]
 	-pozamykać połączenia z bazą		[ ]
@@ -39,6 +39,9 @@
 	-Bootstrap							[ ]
 	-sticky footer						[ ]
 	-main								[ ]
+	-cenzura							[ ]
+	-licznik							[ ]
+	-echo o istniejacym @				[ ]
 -------------------------------------------------
 10. BONUS_______________________________
 	-jak się wyrobię, dodać "to do"		[ ]
