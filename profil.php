@@ -1,19 +1,20 @@
 <?php									// Powitanie
 
 if (isset($_COOKIE["k!tter"])) {
-	echo '<h1 style="text-align: center">', ucfirst($_COOKIE['k!tter']), ", witaj na k!tterze! :)", '</h1>';
+	echo '<h1 style="text-align: center"> <', ucfirst($_COOKIE['k!tter']), ", witaj na k!tterze! >", '</h1>';
 } else {
-	echo '<h1 style="text-align: center">', ucfirst($_SESSION['user_name']), ", witaj na k!tterze! :)", '</h1>';
+	echo '<h1 style="text-align: center">', "< ", ucfirst($_SESSION['user_name']), ", witaj na k!tterze! >", '</h1>';
 };
 
 										// OBSŁUGA METODY 'POST'
+										
 										// Kasowanie
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if(isset($_POST['deleteUser'])) {
 		$conn->query ("DELETE FROM User 
 					   WHERE id=".$_SESSION['user_id']); // poprawić składnię - $_SESSION powinno byc w {} ?
-		echo "profil skasowany";
+		header("Location: /Warsztaty/kopniecieWkalendarz");
 	}
 	
 										// Dodawanie Postów
@@ -50,8 +51,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		<strong>Emalia:</strong> <?php echo $_SESSION['user_mail'] ?><br>
 		<strong>Hasłord: </strong>znasz tylko Ty ;)<br>
 	<p>
-		<input type="submit" name="modyfikacja" value="mody_k!ttuj profil">
-		<br>(Soon...)<br>
+		<input type="submit" class="modyfikacja" value="mody_k!ttuj profil"><br>
+		<form hidden class='ukryty' method='POST' action='#'>
+		<fieldset>
+		<legend>< Zmień dane ></legend>
+		<strong>Zmień: </strong><?php echo $_SESSION['user_name'] ?><strong> na:</strong><br> 
+		<input type="text" name="changeLogin" placeholder="Wprowadź nowy Longin"><br>
+		<strong>Zmień: </strong><?php echo $_SESSION['user_mail'] ?><strong> na:</strong><br> 
+		<input type="text" name="changeEmail" placeholder="Wprowadź nowego Emalia"><br>
+		</fieldset>
+		</form>
 	</p>
 	<?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -114,19 +123,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
 			echo "<fieldset>",
-			"<strong>", "Treść: ", "</strong>", "<em>".$row["tresc"]."</em>", "<br>",
-			"<strong>", "Data: ", "</strong>", "<em>".$row["data"]."</em>", "<br>",
+			"<strong>Treść: ", "</strong>", "<em>".$row["tresc"]."</em><br>",
+			"<strong>", "Data: ", "</strong>", "<em>".$row["data"]."</em><br>",
 			"<form method='post' action='#'>",
 			"<textarea type='text' name='koment'></textarea><br>",
 			"<input type='hidden' name='post_ID' value=".$row['post_id'].">",
 			"<input type='submit' name='komentK!tt' value='Skomentuj'><br>",
+			"<input type='submit' name='deleteK!tt' value='Usuń k!tt!'><br>",
 			"</form>",
-			"<input type='submit' name='deleteK!tt' value='Usuń k!tt!'>", "<br>",
 			"</fieldset>";
 			// var_dump($_POST['komentK!tt']);
-		}
+			}
+			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+				if (isset($_POST['deleteK!tt'])) {
+					$conn->query ("DELETE FROM Posts WHERE post_id".$row['post_id']);
+					header("Location: /Warsztaty/profil");
+					// echo "K!tt usunięty";
+				}
+			}
 	} else {
-		echo ("<strong>Brak k!ttów!</strong><br><br>");
+		echo ("<strong>Brak k!ttów!</strong><br>");
 	};
 	?>
 	</p>
@@ -197,14 +213,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 										<!-- USUWANIE PROFILU -->
 
 <div style="text-align: center">
-	<form method="POST" action="#">
+<!-- <form method="POST" action="#"> -->
 	<p>
 		<fieldset>
 		<legend><h3>< Odwal k!tte ></h3></legend>
 	<p>
 		UWAGA! Poniższy przycisk skutecznie usuwa profil ale (jeszcze) nie prosi o potwierdzenie chęci usunięcia ;)
-		<p><input type="submit" name="deleteUser" value="Odwal k!tte"></p>
+		<p><input type="submit" class="kasujProfil" value="Odwal k!tte"></p>
 	</p>
+	<form method="POST" action="#" hidden class="ukrytyKasownik">
+	<fieldset>
+	<legend>< Hej, odwalanie k!tty to nie przelewki! Czy na pewno chcesz to zrobić? ></legend>
+	<button name="deleteUser">TAK - skonsultowałem to z prawnikami</button>
+	<button>NIE - po prostu klikam gdzie się da</button> <!-- Zapytać Jacka o problem z "priorytetem" metody POST nad jQuery / czyżby prevent default?? -->
+	</fieldset>
+	</form>
+	</p>
+	
 		</fieldset>
 	</p>
 	</form>

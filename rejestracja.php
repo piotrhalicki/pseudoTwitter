@@ -44,8 +44,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if($_POST['pass'] !== $_POST['pass2']) {
 		echo "Podane przez Ciebie hasła się różnią";
-	}
-	else {
+	} else {
 		$options = [
 			'cost' => 11,
 			'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),

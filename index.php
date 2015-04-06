@@ -4,7 +4,11 @@ include('header.php');
 
 <hr>
 <br>
-
+<center>
+<?php
+include('logo.php');
+?>
+</center>
 <?php
 
 require 'vendor/autoload.php';
@@ -22,6 +26,8 @@ $router->map('GET|POST', '/wyloguj', 'wyloguj.php');
 $router->map('GET|POST', '/uzytkownicy', 'allUsers.php');
 $router->map('GET|POST', '/zalogowany', 'zalogowany.php');
 $router->map('GET|POST', '/zarejestrowany', 'zarejestrowany.php');
+$router->map('GET|POST', '/logo', 'logo.php');
+$router->map('GET|POST', '/kopniecieWkalendarz', 'kita.php');
 
 $match = $router->match();
 

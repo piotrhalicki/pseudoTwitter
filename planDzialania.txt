@@ -5,7 +5,7 @@
 2. DODAWANIE POSTÓW_____________________
 	-stworzenie tablicy Posts	 		[X]
 	-textarea podpiąć pod posty			[X]
-	-usuwanie postów					[ ]
+	-usuwanie postów					[X]
 -------------------------------------------------
 3. KOMENTOWANIE POSTÓW__________________
 	-stworzenie tablicy Coments			[X]
@@ -32,7 +32,7 @@
 	-trimm'y							[ ]
 -------------------------------------------------
 9. KOSMETYKA____________________________
-	-logo :)							[ ]
+	-logo :)							[X]
 	-czcionka							[ ]
 	-ujednolicenie						[ ]
 	-CSS								[ ]
@@ -40,7 +40,7 @@
 	-sticky footer						[ ]
 	-main								[ ]
 	-cenzura							[ ]
-	-licznik							[ ]
+	-licznik							[X]
 	-echo o istniejacym @				[ ]
 -------------------------------------------------
 10. BONUS_______________________________

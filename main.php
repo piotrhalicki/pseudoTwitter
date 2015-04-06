@@ -1,7 +1,7 @@
 										<!-- POWITANIE -->
 
 <h1 style="text-align: center">
-< <strong>Witaj na <strong><canvas id="myCanvas"></canvas></strong> ></strong>
+< <strong>Witaj</strong> >
 </h1>
 
 <?php 									// Sprawdzenie hasła, wpis do $_SESSION
