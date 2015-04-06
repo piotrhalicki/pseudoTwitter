@@ -1,5 +1,5 @@
 <?php
-	include('header.php');
+include('header.php');
 ?>
 
 <hr>
@@ -7,7 +7,7 @@
 
 <?php
 
-	require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 
 $router = new AltoRouter();
 $router->setBasePath('/Warsztaty');
@@ -27,12 +27,9 @@ $match = $router->match();
 
 // var_dump($match);
 
-
-
 if ($match) {
 	require $match['target'];
 }; 
-
 
 if (!isset($_SESSION['user_name']) && !(($match['target'] == "main.php" || $match['target'] == "logowanie.php" || $match['target'] == "rejestracja.php"))) {
 	header("Location: /Warsztaty/");
@@ -50,9 +47,6 @@ else {
 	echo "Jeżeli widzisz ten napis tzn. że routing nie działa :(";
 }
 */
-
-
-
 
 //else {
 //	header("Location: /Warsztaty/main");
@@ -74,5 +68,5 @@ if (!isset($_SESSION['user_name']) || !isset($_COOKIE['k!tter'])) {
 <hr>
 
 <?php
-	require('footer.php');
+include('footer.php');
 ?>

@@ -3,8 +3,7 @@
 session_start();
 if(!isset($_SESSION['licznik'])) {
 	$_SESSION['licznik'] = 1;
-}
-else {
+} else {
 	$_SESSION['licznik']++;
 };
 
@@ -39,7 +38,7 @@ if (!isset($_SESSION['user_name'])) {
 		</dl>
 		");
 } else {
-		echo ("
+	echo ("
 		<p>
 		<dl>		
 		<dd><a href='/Warsztaty/profil'>Twój profil</a></dd>
@@ -48,11 +47,8 @@ if (!isset($_SESSION['user_name'])) {
 		</dl>
 		</p>	
 		");
-	};
-	
-	
-	
-	
+};
+		
 ?>
 
 </body>

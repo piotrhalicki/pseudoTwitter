@@ -1,14 +1,12 @@
-<?php
+<?php 								// Połączenie z bazą danych "Strona"
+$servername = "localhost";
+$username = "root";
+$password = "cwiczenia";
+$baseName = "Strona";
 
-	$servername = "localhost";
-	$username = "root";
-	$password = "cwiczenia";
-	$baseName = "Strona";
+$conn = new mysqli($servername, $username, $password, $baseName);
 
-	$conn = new mysqli($servername, $username, $password, $baseName);
-	
-	if ($conn->connect_error) {
-		die("Połączenie nieudane. Błąd: " . $conn->connect_error);
-	};
-
+if ($conn->connect_error) {
+	die("Połączenie nieudane. Błąd: " . $conn->connect_error);
+};
 ?>

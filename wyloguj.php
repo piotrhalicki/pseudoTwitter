@@ -1,22 +1,13 @@
 <?php
+
 // session_start();
 session_destroy();
 
-
-//require 'header.php';
- 
-
-?>
-
-<?php
-
 if (isset($_SESSION)) {
-
 //echo '<strong>' .$_SESSION['user_name'], '</strong>';
 //} else {
-echo ("<h1 style='text-align: center'><strong>Zostałeś wylogowany</strong></h1>");
+	echo ("<h1 style='text-align: center'><strong>< Zostałeś wylogowany ></strong></h1>");
 };
-
 	/*
 	if (isset($_COOKIE["k!tterLogOut"])) {
 		//setcookie('k!tter', "", time()-1800);
@@ -37,6 +28,6 @@ header("Refresh: 10; url=/Warsztaty");
 
 ?>
 
-<?php
-//	require 'footer.php';
-?>
+<p style="text-align: center">
+Do przekierowania pozostało: <span id="odliczanie">10</span><br>;)
+</p>

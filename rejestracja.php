@@ -1,7 +1,5 @@
-<?php
-//	require 'header.php';
-?>
-
+									<!-- FORMULARZ REJESTRACJI -->
+									
 <div style="text-align: center">
 <form action="#" method="POST">
 	<fieldset>
@@ -41,8 +39,7 @@
 </form>
 </div>
 	
-<?php
-// session_start();
+<?php									// "HASZOWANIE" HASŁA
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	if($_POST['pass'] !== $_POST['pass2']) {
@@ -67,8 +64,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //$conn->close(); // zamykanie tabeli ZAWSZE na końcu - to logiczne!
 //$conn = null; 	// zamykanie tabeli ZAWSZE na końcu - to logiczne!
 
-?>
-
-<?php
-//	require 'footer.php';
 ?>
